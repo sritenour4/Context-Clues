@@ -13,23 +13,22 @@ window.addEventListener('DOMContentLoaded', function () {
         var h3 = document.createElement('h3');
         var h3Text = document.createTextNode(`Accusation ${i}`);
         h3.appendChild(h3Text)
-        document.body.appendChild(h3);           
-         
+        document.body.appendChild(h3);
+        h3.addEventListener('click', accusationAlert(i));
+
     }
-    
-    
+
     function accusationAlert(i) {
         var friend = friendArray[i % 5];
         var location = locationArray[i % 10];
-        var weapon = weaponArray[i % 20];  
+        var weapon = weaponArray[i % 20];
 
-       
-        return  function () {
+        return function () {
             alert(`Accusation ${i}: I accuse ${friend}, with the ${weapon} in the ${location}!`);
+        };
     };
-};
-    
-    });
+
+});
 
 
 
